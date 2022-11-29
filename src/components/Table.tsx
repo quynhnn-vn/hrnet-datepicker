@@ -62,11 +62,11 @@ export default function Table(props: Props) {
 
   return (
     <div className='overflow-x-auto'>
-      <table className='w-full border-1 shadow rounded mb-4 table-auto'>
+      <table className='w-full shadow rounded mb-4 table-auto'>
         <thead>
           <tr className='h-14 bg-tertiary'>
             {FORM_FIELDS.map((field, index) => (
-              <th key={field.id} className={`border-0 text-center ${index === 0 ? 'rounded-tl' : ''}`}>
+              <th key={field.id} className={`text-center ${index === 0 ? 'rounded-tl' : ''}`}>
                 <span className='flex items-center justify-center'>
                   {field.placeholder}
                   <button onClick={() => onSortTable(field.id, field.type)}>
@@ -81,7 +81,7 @@ export default function Table(props: Props) {
                 </span>
               </th>
             ))}
-            <th className='border-0 rounded-tr'></th>
+            <th className='rounded-tr'></th>
           </tr>
         </thead>
         <tbody className='text-center'>
@@ -101,12 +101,12 @@ export default function Table(props: Props) {
                         : value
                   }
                   return (
-                    <td key={index} className='h-10 border-0'>
+                    <td key={index} className='h-10'>
                       {value}
                     </td>
                   )
                 })}
-                <td className='border-0 px-2'>
+                <td className='px-2'>
                   <button onClick={() => onDeleteData(employee)}>
                     <RiDeleteBin2Line size='1.2rem' color='red' />
                   </button>
