@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TiArrowSortedUp, TiArrowSortedDown, TiArrowUnsorted } from 'react-icons/ti'
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { DEPARTMENTS, FORM_FIELDS, STATES } from './utils'
+import './Table.css'
 
 interface Data {
   id: string
