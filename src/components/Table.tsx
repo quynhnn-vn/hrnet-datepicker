@@ -81,7 +81,7 @@ export default function Table(props: Props) {
                 </span>
               </th>
             ))}
-            <th className='sm:border-0 border rounded-tr'></th>
+            <th className='border-0 rounded-tr'></th>
           </tr>
         </thead>
         <tbody className='text-center'>
@@ -101,12 +101,12 @@ export default function Table(props: Props) {
                         : value
                   }
                   return (
-                    <td key={index} className='h-10 sm:border-0 border'>
+                    <td key={index} className='h-10 border-0'>
                       {value}
                     </td>
                   )
                 })}
-                <td className='sm:border-0 border px-2'>
+                <td className='border-0 px-2'>
                   <button onClick={() => onDeleteData(employee)}>
                     <RiDeleteBin2Line size='1.2rem' color='red' />
                   </button>
