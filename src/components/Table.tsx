@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TiArrowSortedUp, TiArrowSortedDown, TiArrowUnsorted } from 'react-icons/ti'
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { DEPARTMENTS, FORM_FIELDS, STATES } from './utils'
@@ -25,7 +25,11 @@ export default function Table(props: Props) {
   const { tableData, onDeleteEmployee } = props
 
   const [order, setOrder] = useState<boolean | 'asc' | 'desc'>(false)
-  const [data, setData] = useState<Data[]>(tableData)
+  const [data, setData] = useState<Data[]>([])
+
+  useEffect(() => {
+    setData(tableData)
+  }, [tableData])
 
   const onSortTable = (fieldId: string, fieldType: string) => {
     let _order = order
