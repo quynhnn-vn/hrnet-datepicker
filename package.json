@@ -1,5 +1,5 @@
 {
-  "name": "typescript-hnret-table",
+  "name": "typescript-hrnet-table",
   "version": "1.0.3",
   "description": "",
   "main": "./dist/cjs/index.js",

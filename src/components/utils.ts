@@ -5,10 +5,6 @@ export const COLORS = {
   danger: '#ff6347',
 }
 
-export const SIZE = {
-  logo: 100,
-}
-
 export const FORM_FIELDS = [
   {
     type: 'text',

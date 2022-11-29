@@ -17,11 +17,11 @@ interface Data {
 
 interface Props {
   tableData: Array<Data>
-  onDeleteEmployee: (employee: Data) => void
+  onDeleteData: (employee: Data) => void
 }
 
 export default function Table(props: Props) {
-  const { tableData, onDeleteEmployee } = props
+  const { tableData, onDeleteData } = props
 
   const [order, setOrder] = useState<boolean | 'asc' | 'desc'>(false)
   const [data, setData] = useState<Data[]>([])
@@ -66,7 +66,7 @@ export default function Table(props: Props) {
         <thead>
           <tr className='h-14 bg-tertiary'>
             {FORM_FIELDS.map((field, index) => (
-              <th key={field.id} className={`sm:border-0 border text-center ${index === 0 ? 'rounded-tl' : ''}`}>
+              <th key={field.id} className={`border-0 text-center ${index === 0 ? 'rounded-tl' : ''}`}>
                 <span className='flex items-center justify-center'>
                   {field.placeholder}
                   <button onClick={() => onSortTable(field.id, field.type)}>
@@ -107,7 +107,7 @@ export default function Table(props: Props) {
                   )
                 })}
                 <td className='sm:border-0 border px-2'>
-                  <button onClick={() => onDeleteEmployee(employee)}>
+                  <button onClick={() => onDeleteData(employee)}>
                     <RiDeleteBin2Line size='1.2rem' color='red' />
                   </button>
                 </td>
